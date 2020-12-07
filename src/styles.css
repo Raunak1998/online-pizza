@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+/* .navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  width: 100%;
+} */
+/* #carousel {
+  width: 100%;
+  top: 0;
+} */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,800&display=swap");

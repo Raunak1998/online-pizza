@@ -1,0 +1,31 @@
+<div class="card" *ngIf="cartItems.length===0">
+    Cart is Empty! Please add products to your cart !
+</div>  
+<div class="row" *ngIf="cartItems.length>0">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <ul class="list-group">
+            <li class="list-group-item list-group-item-warning">
+                <strong>CART</strong>
+            </li>
+            <li *ngFor="let cartItem of cartItems " class="list-group-item">
+                <app-cart-item
+                    [cartItem]='cartItem'>
+                </app-cart-item>
+            </li>
+            <li  class="list-group-item list-group-item-success">
+                <strong>Total:</strong>{{ total | currency:'INR'}}
+            </li> 
+            <li class="list-group-item list-group-item-warning">
+                <button type="button" class="btn btn-outline-info btn-block"><strong>Place Order</strong></button>
+                <button type="button" class="btn btn-primary btn-block" (click)='continueShopping()'><strong>Still Hungry! Click here to Order more.</strong></button>
+            </li>
+        </ul>
+
+    </div>
+    <div class="col-4"></div>
+</div>
+  
+
+
+

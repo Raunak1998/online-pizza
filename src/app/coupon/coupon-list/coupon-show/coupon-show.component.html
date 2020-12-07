@@ -1,0 +1,30 @@
+<div style="margin: 5px">
+  <div>
+    <img
+      class="card-img-top"
+      src="https://www.flaticon.com/svg/static/icons/svg/2331/2331980.svg"
+      alt="Card image"
+    />
+  </div>
+  <div class="card-body">
+    <h3 class="card-title" style="text-align: center">
+      {{ coupon.couponName }}
+    </h3>
+    <p
+      class="card-text"
+      style="font-size: small; text-align: center; font-weight: bold"
+    >
+      Coupon Type: {{ coupon.couponType }}
+    </p>
+    <p
+      class="card-text"
+      style="font-size: small; text-align: center; font-weight: bold"
+    >
+      Coupon Description: {{ coupon.couponDescription }}
+    </p>
+    <div class="d-flex justify-content-between">
+      <button class="btn btn-primary">See Details</button>
+      <button class="btn btn-danger">Delete</button>
+    </div>
+  </div>
+</div>

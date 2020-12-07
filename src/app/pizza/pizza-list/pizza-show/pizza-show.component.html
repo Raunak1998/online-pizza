@@ -1,0 +1,15 @@
+<div class="d-flex align-items-center">
+  <div class="thumb">
+    <img
+      src="https://www.delonghi.com/Global/recipes/multifry/pizza_fresca.jpg"
+      alt=""
+      style="border-radius: 50%; width: 250px; height: 250px; margin-right: 20px"
+    />
+  </div>
+  <div class="info">
+    <h3>{{ pizza.pizzaName }}</h3>
+    <p>{{ pizza.pizzaDescription }}</p>
+    <div>{{ pizza.pizzaSize }} {{ pizza.pizzaCost }}</div>
+    <button (click) = "cart(pizza)" class="btn btn-outline-info btn-block">Add to Cart</button>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="container">
+    <h2>Login Form</h2>
+    <form #loginForm="ngForm" (ngSubmit) = "validate()">
+      <div class="form-group row">
+        <label for="username" class="col-sm-2 col-form-label">Username:</label>
+        <div class="col-sm-10">
+          <input
+            type="text"
+            [(ngModel)]="user.userName"
+            name="userName"
+            #usernameControl="ngModel"
+            required
+          />
+          <span
+            class="text-small text-danger"
+            *ngIf="usernameControl.invalid && usernameControl.touched" >
+            Username is required
+        </span>
+          <br />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="password" class="col-sm-2 col-form-label">Password:</label>
+        <div class="col-sm-10">
+          <input
+            type="password"
+            [(ngModel)]="user.password"
+            name="password"
+            #passwordControl="ngModel"
+            required
+          />
+          <span
+            class="text-small text-danger"
+            *ngIf="passwordControl.invalid && passwordControl.touched" >
+            Password is required
+        </span>
+        <br />
+        </div>
+      </div>
+      <div class="form-group row">
+        <button
+          type="submit"
+          class="btn btn-info"
+          [disabled]="loginForm.invalid"
+        >
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

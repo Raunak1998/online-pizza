@@ -1,0 +1,16 @@
+<div class="container mt-5">
+  <div>
+    <h3>Coupon Details</h3>
+    <!-- <button class="btn btn-success" (click)='displayAddForm()'>Add Employee</button>
+  </div> -->
+    <hr />
+    <div class="row">
+      <div
+        class="col-lg-3 col-md-6 col-sm-12"
+        *ngFor="let coupon of couponArray"
+        app-coupon-show
+        [coupon]="coupon"
+      ></div>
+    </div>
+  </div>
+</div>
