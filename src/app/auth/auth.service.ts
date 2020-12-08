@@ -9,7 +9,7 @@ export class AuthService {
 
   isLoggedIn = false;
   role = 'Customer';
-  customer: Customer = {} as Customer;
+  customer: any = null;
   constructor(private httpClient: HttpClient) { }
 
 
@@ -58,5 +58,22 @@ export class AuthService {
 
   getCurrentCustomer(): Customer{
     return this.customer;
+  }
+
+  async updateCurrentUserDetails(updateUser: any): Promise<any>{
+    let resp = {};
+    this.httpClient.put('http://localhost:8080/customer/update', updateUser).toPromise().then((response: any) => {
+      console.log(response);
+      alert('Customer successfully update!');
+      resp = {
+        status: true
+      };
+    }).catch((error: HttpErrorResponse) => {
+      resp = {
+        status: false,
+        error: error.error.message,
+      };
+    });
+    return resp;
   }
 }

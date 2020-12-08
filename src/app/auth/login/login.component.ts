@@ -10,7 +10,7 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  user: any = {userName: '', password: ''};
+  user: any = { userName: '', password: '' };
   error = '';
   constructor(private authService: AuthService, private sharedService: SharedService, private router: Router) { }
 
@@ -18,14 +18,16 @@ export class LoginComponent implements OnInit {
   }
 
   // tslint:disable-next-line: typedef
-  async validate(){
+  async validate() {
     const resp: any = await this.authService.validateUser(this.user);
     console.log(resp);
     console.log(this.authService.getCurrentCustomer());
     if (!resp.status) {
       this.error = resp.error;
     }
-    this.sharedService.setCurrentCustomer(this.authService.getCurrentCustomer());
-    this.router.navigate(['/']);
+    else {
+      this.sharedService.setCurrentCustomer(this.authService.getCurrentCustomer());
+      this.router.navigate(['/']);
+    }
   }
 }
