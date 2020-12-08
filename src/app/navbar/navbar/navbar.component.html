@@ -67,8 +67,8 @@
         My Profile
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" routerLink = "/my-profile">My Details</a>
-        <a class="dropdown-item" href="#">My Orders</a>
+        <a class="dropdown-item" routerLink="/my-profile">My Details</a>
+        <a class="dropdown-item" routerLink="/order-history">My Orders</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" [routerLink]="['/cart']">My Cart </a>
       </div>
@@ -80,9 +80,9 @@
       *ngIf="getUser() == null"
       >Login</a
     >
-    <a class="nav-link" style="color: white" *ngIf="getUser() != null"
-      >Logout</a
-    >
+    <a class="nav-link" style="color: white" *ngIf="getUser() != null">
+      Logout
+    </a>
     <a [routerLink]="['/cart']">
       <img
         src="https://www.iconsdb.com/icons/preview/white/cart-38-xxl.png"

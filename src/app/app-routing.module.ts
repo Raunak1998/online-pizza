@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutUsComponent } from './about-us/about-us/about-us.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { CouponAddComponent } from './coupon/coupon-add/coupon-add.component';
+import { CouponEditComponent } from './coupon/coupon-edit/coupon-edit.component';
 import { CouponListComponent } from './coupon/coupon-list/coupon-list.component';
 import { EditProfileComponent } from './customer/edit-profile/edit-profile.component';
 import { MyProfileComponent } from './customer/my-profile/my-profile.component';
@@ -28,6 +30,8 @@ const routes: Routes = [
   {path: 'menu', component: PizzaListComponent},
   {path: 'pizza-add', component: PizzaAddComponent},
   {path: 'edit-profile', component: EditProfileComponent},
+  {path: 'coupon-add', component: CouponAddComponent},
+  {path: 'coupon-edit', component: CouponEditComponent},
 ];
 
 @NgModule({

@@ -14,11 +14,11 @@ export class CouponListComponent implements OnInit {
   constructor(private couponService: CouponService, private router: Router) { }
 
   ngOnInit(): void {
-    this.couponService.getAllCoupons().subscribe((response: any)=>
+    this.couponService.getAllCoupons().subscribe((response: any) =>
     {
-      console.log("Get All Coupons: " + response[0].id);
+      console.log('Get All Coupons: ' + response[0].id);
       this.couponArray = response;
-    })
+    });
   }
 
 }

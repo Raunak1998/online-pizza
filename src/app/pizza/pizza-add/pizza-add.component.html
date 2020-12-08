@@ -1,7 +1,7 @@
 <div class="row">
   <div class="container">
     <h2>Add New Pizza Form</h2>
-    <form #pizzaForm="ngForm">
+    <form #pizzaForm="ngForm" (ngSubmit) = "addNewPizza()">
       <div class="form-group row">
         <label for="name" class="col-sm-2 col-form-label">Pizza Name:</label>
         <div class="col-sm-10">

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Pizza } from '../pizza';
+import { PizzaService } from '../pizza.service';
 
 @Component({
   selector: 'app-pizza-add',
@@ -8,10 +10,20 @@ import { Pizza } from '../pizza';
 })
 export class PizzaAddComponent implements OnInit {
 
-  pizza: Pizza = {pizzaId: 0, pizzaName: '', pizzaType: '', pizzaDescription: '', pizzaCost: 200, pizzaSize: ''}
-  constructor() { }
+  pizza: Pizza = {} as Pizza;
+  error = '';
+  constructor(private pizzaService: PizzaService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  async addNewPizza(){
+    const resp = await this.pizzaService.addPizza(this.pizza);
+    console.log(resp);
+    alert('Pizza Successfully Added');
+    if (!resp.status) {
+      this.error = resp.error;
+    }
+    this.router.navigate(['/menu']);
+  }
 }
