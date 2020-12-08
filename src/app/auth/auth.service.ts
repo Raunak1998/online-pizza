@@ -14,7 +14,6 @@ export class AuthService {
 
 
   async validateUser(user: any): Promise<any> {
-    console.log(user);
     let resp = {};
     if (user.username === 'admin' && user.password === 'admin123') {
       this.isLoggedIn = true;
@@ -22,8 +21,9 @@ export class AuthService {
     }
     else {
       await this.httpClient.post('http://localhost:8080/customer/login', user).toPromise().then((response: any) => {
-        console.log(response);
+        console.log('Auth' + response);
         this.customer = response;
+        console.log(this.customer);
         alert('Login Successful');
         this.isLoggedIn = true;
         resp = {
@@ -54,5 +54,9 @@ export class AuthService {
       };
     });
     return resp;
+  }
+
+  getCurrentCustomer(): Customer{
+    return this.customer;
   }
 }

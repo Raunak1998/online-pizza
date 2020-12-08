@@ -4,6 +4,7 @@ import { AboutUsComponent } from './about-us/about-us/about-us.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { CouponListComponent } from './coupon/coupon-list/coupon-list.component';
+import { EditProfileComponent } from './customer/edit-profile/edit-profile.component';
 import { MyProfileComponent } from './customer/my-profile/my-profile.component';
 import { OrderHistoryComponent } from './customer/order-history/order-history.component';
 import { FooterComponent } from './footer/footer/footer.component';
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path: 'view-order', component: ViewOrderComponent},
   {path: 'menu', component: PizzaListComponent},
   {path: 'pizza-add', component: PizzaAddComponent},
+  {path: 'edit-profile', component: EditProfileComponent},
 ];
 
 @NgModule({

@@ -21,10 +21,11 @@ export class LoginComponent implements OnInit {
   async validate(){
     const resp: any = await this.authService.validateUser(this.user);
     console.log(resp);
+    console.log(this.authService.getCurrentCustomer());
     if (!resp.status) {
       this.error = resp.error;
     }
-    this.sharedService.setCurrentCustomer(resp);
+    this.sharedService.setCurrentCustomer(this.authService.getCurrentCustomer());
     this.router.navigate(['/']);
   }
 }

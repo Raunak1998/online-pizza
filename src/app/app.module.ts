@@ -22,6 +22,7 @@ import { CarouselComponent } from './navbar/carousel/carousel.component';
 import { CouponShowComponent } from './coupon/coupon-list/coupon-show/coupon-show.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { CartItemComponent } from './order/cart/cart-item/cart-item.component';
+import { EditProfileComponent } from './customer/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { CartItemComponent } from './order/cart/cart-item/cart-item.component';
     CouponShowComponent,
     HomepageComponent,
     CartItemComponent,
+    EditProfileComponent,
   ],
   imports: [
     BrowserModule,
