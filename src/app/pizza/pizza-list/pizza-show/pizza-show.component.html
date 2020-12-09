@@ -35,6 +35,19 @@
     >
       {{ pizza.pizzaDescription }}
     </p>
+    <p
+      style="
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 28px;
+        margin-top: 16px;
+        margin-bottom: 6px;
+        color: #6e6e6e;
+        font-family: 'Montserrat', sans-serif;
+      "
+    >
+      {{ pizza.pizzaType }}
+    </p>
     <div
       style="
         font-size: 16px;
@@ -62,6 +75,7 @@
       (click)="cart(pizza)"
       class="btn btn-outline-info btn-block"
       style="width: 150px; font-weight: bolder"
+      *ngIf = "getRole() != 'Admin'"
     >
       Add to Cart
     </button>

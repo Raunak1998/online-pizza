@@ -87,7 +87,7 @@
     >
       Logout
     </a>
-    <a [routerLink]="['/cart']">
+    <a [routerLink]="['/cart']" *ngIf = "getRole() != 'Admin'">
       <img
         src="https://www.iconsdb.com/icons/preview/white/cart-38-xxl.png"
         height="40"
