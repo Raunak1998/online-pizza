@@ -1,2 +1,7 @@
-<div>{{cartItem.pizzaName}}</div> 
-<strong>{{ cartItem.pizzaCost | currency:'INR'}}</strong>
+<div class="d-flex justify-content-between">
+  <div class="d-flex flex-column">
+    <div>{{cartItem.pizzaName}}</div>
+    <strong>{{ cartItem.pizzaCost | currency:'INR'}}</strong>
+  </div>
+  <button class="btn btn-danger" (click)="removeFromCart()">Remove</button>
+</div>

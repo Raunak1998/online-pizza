@@ -1,5 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Customer } from '../customer/customer';
 
 @Injectable({
@@ -10,14 +11,31 @@ export class AuthService {
   isLoggedIn = false;
   role = 'Customer';
   customer: any = null;
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private router: Router) { }
 
+  async logout(): Promise<void> {
+    this.isLoggedIn = false;
+    this.role = 'Customer';
+    this.customer = null;
+    await this.router.navigate(['/']);
+    window.location.reload();
+  }
 
   async validateUser(user: any): Promise<any> {
     let resp = {};
-    if (user.username === 'admin' && user.password === 'admin123') {
-      this.isLoggedIn = true;
-      this.role = 'Admin';
+    if (user.userName === 'admin') {
+      if (user.password === 'admin123') {
+        this.isLoggedIn = true;
+        this.role = 'Admin';
+        resp = {
+          status: true,
+        };
+      } else {
+        resp = {
+          status: false,
+          error: 'Incorrect username/password.'
+        };
+      }
     }
     else {
       await this.httpClient.post('http://localhost:8080/customer/login', user).toPromise().then((response: any) => {

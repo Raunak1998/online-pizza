@@ -3,53 +3,42 @@
   style="
     letter-spacing: 2px;
     font-weight: bolder;
-    font-family: 'Open Sans', sans-serif;
-    background-color: steelblue;
+    font-family:open sans,sans-serif;
+    background-color: rgb(6, 99, 175);
   "
 >
   <a
     class="navbar-brand"
-    href="#"
-    style="font-style: oblique; font-size: x-large"
+    routerLink = '/'
+    style="color: #F2C64D; font-size: 50px; font-weight: 500; margin-bottom: 18px; display: block; font-family: 'Pacifico', cursive;"
   >
-    <img
-      src="https://i.pinimg.com/originals/35/2a/91/352a9102893872462e904324746f443e.jpg"
-      width="70"
-      height="70"
-      style="border-radius: 50%"
-    />
     Pizza Turtle's
   </a>
   <button
     class="navbar-toggler"
     type="button"
     data-toggle="collapse"
-    data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
   >
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div
     class="collapse navbar-collapse"
-    id="navbarSupportedContent"
-    style="font-weight: bolder"
+    style="font-size: 20px; font-weight: 500; color: #1A0D01; font-family: 'Montserrat', sans-serif; color: white;"
   >
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item routerLinkActive=active'">
         <a class="nav-link" routerLink="/"
           >Home <span class="sr-only">(current)</span></a
         >
       </li>
-      <li class="nav-item">
+      <li class="nav-item routerLinkActive=active'">
         <a class="nav-link" routerLink="/menu">Menu</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item routerLinkActive=active'">
         <a class="nav-link" routerLink="/coupon-list">All Offers</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item routerLinkActive=active'">
         <a class="nav-link" routerLink="/about-us">About Us</a>
       </li>
     </ul>
@@ -80,7 +69,7 @@
       *ngIf="getUser() == null"
       >Login</a
     >
-    <a class="nav-link" style="color: white" *ngIf="getUser() != null">
+    <a class="nav-link" style="color: white; cursor: pointer;" *ngIf="getUser() != null" (click)="logout()">
       Logout
     </a>
     <a [routerLink]="['/cart']">
@@ -91,15 +80,4 @@
       />
     </a>
   </div>
-  <!-- <form class="form-inline my-2 my-lg-0">
-      <input
-        class="form-control mr-sm-2"
-        type="search"
-        placeholder="Search"
-        aria-label="Search"
-      />
-      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">
-        Search
-      </button>
-    </form> -->
 </nav>

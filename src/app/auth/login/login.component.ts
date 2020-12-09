@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SharedService } from 'src/app/shared.service';
 import { AuthService } from '../auth.service';
 
@@ -12,9 +12,18 @@ export class LoginComponent implements OnInit {
 
   user: any = { userName: '', password: '' };
   error = '';
-  constructor(private authService: AuthService, private sharedService: SharedService, private router: Router) { }
+  redirectToCart = false;
+  constructor(
+    private authService: AuthService, private sharedService: SharedService, private router: Router, private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    const params = this.route.snapshot.queryParamMap;
+    if (params.keys.length > 0) {
+      if (params.get('redirectToCart')) {
+        this.redirectToCart = true;
+      }
+    }
   }
 
   // tslint:disable-next-line: typedef
@@ -27,7 +36,8 @@ export class LoginComponent implements OnInit {
     }
     else {
       this.sharedService.setCurrentCustomer(this.authService.getCurrentCustomer());
-      this.router.navigate(['/']);
+      console.log(this.redirectToCart);
+      this.redirectToCart ? this.router.navigate(['/cart']) : this.router.navigate(['/']);
     }
   }
 }

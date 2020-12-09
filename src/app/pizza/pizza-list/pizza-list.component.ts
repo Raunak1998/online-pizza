@@ -12,17 +12,22 @@ import { PizzaService } from '../pizza.service';
 export class PizzaListComponent implements OnInit {
 
   pizzas: Pizza[] = [];
+  cartItems: any = [];
 
-  constructor(private pizzaService: PizzaService, private cartService: CartService) {}
+  constructor(
+    private pizzaService: PizzaService,
+    private cartService: CartService,
+    public router: Router,
+  ) {}
 
   ngOnInit(): void {
     this.pizzaService.getAllPizzas().subscribe((response: Array<Pizza>) => {
       this.pizzas = response.slice(0, 6);
     });
+    this.cartItems = this.cartService.getCartItems();
   }
 
-  // tslint:disable-next-line: typedef
-  addToCart(pizza: Pizza){
+  addToCart(pizza: Pizza): void{
     this.cartService.addItem(pizza);
   }
 

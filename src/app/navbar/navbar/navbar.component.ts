@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth/auth.service';
 import { SharedService } from 'src/app/shared.service';
 
 @Component({
@@ -8,13 +9,21 @@ import { SharedService } from 'src/app/shared.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private sharedService: SharedService) { }
+  role = '';
+  isLoggedIn = false;
+  constructor(private sharedService: SharedService, private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.isLoggedIn = this.authService.isLoggedIn;
+    this.role = this.authService.role;
   }
 
   // tslint:disable-next-line: typedef
   getUser(){
     return this.sharedService.getCurrentCustomer();
+  }
+
+  logout(): void {
+    this.authService.logout();
   }
 }

@@ -1,28 +1,34 @@
-<div class="d-flex flex-column" style="margin: 20px;">
-  <div class="d-flex flex-column align-items-center">
-    <div class="text-center">Pizza Menu</div>
-    <h3>Best Ever Pizzas</h3>
-    <button routerLink = "/pizza-add">Add Pizza</button>
-  </div>
+<div class="container">
+  <div class="d-flex flex-column" style="margin: 20px;">
+    <div class="d-flex flex-column align-items-center">
+      <div class="text-center" style="color: #F2C64D; font-size: 50px; font-weight: 500; margin-bottom: 18px; display: block; font-family: 'Pacifico', cursive;">Pizza Menu</div>
+      <h3 style="font-size: 70px; font-weight: 700; color: #1A0D01; font-family: 'Montserrat', sans-serif; text-transform: uppercase;">Best Ever Pizzas</h3>
+      <button routerLink = "/pizza-add" class="btn btn-outline-primary btn-block" style="width: 150px; font-weight: bolder;">Add Pizza</button>
+    </div>
 
-  <div class="row">
-    <app-pizza-show
-      class="col-xl-6 col-md-6 col-lg-6"
-      *ngFor="let pizza of pizzas"
-      [pizza]="pizza"
-      (send) = "addToCart($event)"
+    <div class="row">
+      <app-pizza-show
+        class="col-xl-6 col-md-6 col-lg-6"
+        *ngFor="let pizza of pizzas"
+        [pizza]="pizza"
+        (send) = "addToCart($event)"
+      >
+      </app-pizza-show>
+    </div>
+
+    <button
+      class="btn btn-outline-warning btn-block"
+      style="
+      margin-top: 30px;
+        border-radius: 15px;
+        font-weight: bolder;
+        height: 70px;
+      "
+      *ngIf="this.router.url !== '/menu'"
+      (click)="this.router.navigate(['/menu'])"
     >
-    </app-pizza-show>
+      View All Pizzas
+    </button>
+
   </div>
-
-  <button
-    class="btn btn-outline-warning btn-block"
-    style="
-    margin-top: 30px;
-      border-radius: 15px;
-    "
-  >
-    View All Pizzas
-  </button>
-
 </div>

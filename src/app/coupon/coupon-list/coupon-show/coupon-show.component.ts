@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Coupon } from '../../coupon';
 
 @Component({
@@ -9,10 +10,16 @@ import { Coupon } from '../../coupon';
 })
 export class CouponShowComponent implements OnInit {
 
-  @Input() coupon: any;
-  constructor() { }
+  @Input() coupon: Coupon = {} as Coupon;
+  constructor(
+    private router: Router,
+  ) {}
 
   ngOnInit(): void {
+  }
+
+  editCoupon(): void {
+    this.router.navigate(['/coupon-add'], { queryParams: this.coupon });
   }
 
 }

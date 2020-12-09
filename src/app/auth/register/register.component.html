@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" style="background-color: lightgrey; width: 670px; padding: 20px; box-shadow: lightgrey; box-shadow: 5px 5px 5px grey;">
     <h2>Register New Customer Form</h2>
     <form #custForm="ngForm" (ngSubmit) = "registerNewUser()">
       <div class="form-group row">
@@ -128,8 +128,8 @@
         </div>
       </div>
       <p>{{ error }}</p>
-      <div class="form-group row">
-        <button type="submit" class="btn btn-info" [disabled]="custForm.invalid">
+      <div class="form-group row" >
+        <button type="submit" class="btn btn-info" [disabled]="custForm.invalid" >
           Submit Details
         </button>
       </div>

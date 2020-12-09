@@ -17,7 +17,11 @@ export class CouponListComponent implements OnInit {
     this.couponService.getAllCoupons().subscribe((response: any) =>
     {
       console.log('Get All Coupons: ' + response[0].id);
-      this.couponArray = response;
+      response.forEach((element: Coupon) => {
+        if (element.couponName !== 'No Coupon') {
+          this.couponArray.push(element);
+        }
+      });
     });
   }
 

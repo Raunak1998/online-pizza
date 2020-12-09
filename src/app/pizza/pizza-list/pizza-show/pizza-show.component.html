@@ -1,15 +1,66 @@
-<div class="d-flex align-items-center">
+<div class="d-flex align-items-center" style="margin-bottom: 30px">
   <div class="thumb">
     <img
-      src="https://www.delonghi.com/Global/recipes/multifry/pizza_fresca.jpg"
+      src="https://www.flaticon.com/svg/static/icons/svg/432/432339.svg"
       alt=""
-      style="border-radius: 50%; width: 250px; height: 250px; margin-right: 20px"
+      style="
+        border-radius: 50%;
+        width: 250px;
+        height: 250px;
+        margin-right: 20px;
+      "
     />
   </div>
   <div class="info">
-    <h3>{{ pizza.pizzaName }}</h3>
-    <p>{{ pizza.pizzaDescription }}</p>
-    <div>{{ pizza.pizzaSize }} {{ pizza.pizzaCost }}</div>
-    <button (click) = "cart(pizza)" class="btn btn-outline-info btn-block">Add to Cart</button>
+    <h3
+      style="
+        font-size: 30px;
+        color: #1a0d01;
+        font-weight: 700;
+        font-family: 'Montserrat', sans-serif;
+      "
+    >
+      {{ pizza.pizzaName }}
+    </h3>
+    <p
+      style="
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 28px;
+        margin-top: 16px;
+        margin-bottom: 6px;
+        color: #6e6e6e;
+        font-family: 'Montserrat', sans-serif;
+      "
+    >
+      {{ pizza.pizzaDescription }}
+    </p>
+    <div
+      style="
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 28px;
+        margin-top: 16px;
+        margin-bottom: 6px;
+        color: #6e6e6e;
+        font-family: 'Montserrat', sans-serif;
+      "
+    >
+      {{ pizza.pizzaSize }} 
+      <span style="
+      display: block;
+      font-weight: 700;
+      font-size: 24px;
+      color: #F0542C;
+      font-family: 'Montserrat', sans-serif;">{{ pizza.pizzaCost | currency:'INR'}}</span>
+    </div>
+    <button
+      (click)="cart(pizza)"
+      class="btn btn-outline-info btn-block"
+      style="width: 150px; font-weight: bolder;"
+    >
+      Add to Cart
+    </button>
+    <button (click)="editPizza()" class="btn btn-outline-danger btn-block" style="width: 150px; font-weight: bolder;">Edit Pizza</button>
   </div>
 </div>

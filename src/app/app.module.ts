@@ -24,8 +24,8 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { CartItemComponent } from './order/cart/cart-item/cart-item.component';
 import { EditProfileComponent } from './customer/edit-profile/edit-profile.component';
 import { OrderShowComponent } from './customer/order-history/order-show/order-show.component';
-import { CouponEditComponent } from './coupon/coupon-edit/coupon-edit.component';
 import { CouponAddComponent } from './coupon/coupon-add/coupon-add.component';
+import { OrderDetailsComponent } from './order-details/order-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,8 +48,8 @@ import { CouponAddComponent } from './coupon/coupon-add/coupon-add.component';
     CartItemComponent,
     EditProfileComponent,
     OrderShowComponent,
-    CouponEditComponent,
-    CouponAddComponent
+    CouponAddComponent,
+    OrderDetailsComponent
   ],
   imports: [
     BrowserModule,
