@@ -58,7 +58,6 @@ export class AuthService {
   async addNewUser(newCustomer: Customer): Promise<any> {
     let resp = {};
     this.httpClient.post('http://localhost:8080/customer/insert', newCustomer).toPromise().then((response: any) => {
-      console.log(response);
       resp = {
         status: true
       };

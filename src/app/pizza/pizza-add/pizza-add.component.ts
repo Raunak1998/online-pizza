@@ -35,7 +35,7 @@ export class PizzaAddComponent implements OnInit {
 
   async submitPizzaForm(): Promise<void> {
     let resp;
-    if (this.newPizza) {
+    if (!this.newPizza) {
       resp = await this.pizzaService.addPizza(this.pizza);
     }
     else {

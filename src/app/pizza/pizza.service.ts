@@ -18,7 +18,6 @@ export class PizzaService {
   async addPizza(pizza: Pizza): Promise<any> {
     let resp = {};
     await this.httpClient.post('http://localhost:8080/pizza/insert', pizza).toPromise().then((response: any) => {
-      console.log(response);
       alert('Pizza successfully added!');
       resp = {
         status: true
@@ -35,7 +34,6 @@ export class PizzaService {
   async editPizza(pizza: Pizza): Promise<any> {
     let resp = {};
     await this.httpClient.put('http://localhost:8080/pizza/update', pizza).toPromise().then((response: any) => {
-      console.log(response);
       alert('Pizza successfully edited!');
       resp = {
         status: true
