@@ -29,14 +29,11 @@ export class LoginComponent implements OnInit {
   // tslint:disable-next-line: typedef
   async validate() {
     const resp: any = await this.authService.validateUser(this.user);
-    console.log(resp);
-    console.log(this.authService.getCurrentCustomer());
     if (!resp.status) {
-      this.error = resp.error;
+      this.error = "Invalid Username/Password";
     }
     else {
       this.sharedService.setCurrentCustomer(this.authService.getCurrentCustomer());
-      console.log(this.redirectToCart);
       this.redirectToCart ? this.router.navigate(['/cart']) : this.router.navigate(['/']);
     }
   }

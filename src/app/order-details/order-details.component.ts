@@ -18,7 +18,6 @@ export class OrderDetailsComponent implements OnInit {
   ngOnInit(): void {
     const params = this.route.snapshot.queryParamMap;
     this.order = JSON.parse(params.get('order') ?? '{}');
-    console.log(this.order);
   }
 
 }

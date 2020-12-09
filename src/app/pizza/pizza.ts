@@ -1,4 +1,4 @@
-export interface Pizza{
+export interface Pizza {
     pizzaId: number;
     pizzaType: string;
     pizzaSize: string;

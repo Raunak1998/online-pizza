@@ -9,7 +9,7 @@ import { Customer } from '../customer/customer';
 export class AuthService {
 
   isLoggedIn = false;
-  role = 'Customer';
+  role = 'Anonymous';
   customer: any = null;
   constructor(private httpClient: HttpClient, private router: Router) { }
 
@@ -39,11 +39,9 @@ export class AuthService {
     }
     else {
       await this.httpClient.post('http://localhost:8080/customer/login', user).toPromise().then((response: any) => {
-        console.log('Auth' + response);
         this.customer = response;
-        console.log(this.customer);
-        alert('Login Successful');
         this.isLoggedIn = true;
+        this.role = 'Customer';
         resp = {
           status: true
         };
@@ -61,7 +59,6 @@ export class AuthService {
     let resp = {};
     this.httpClient.post('http://localhost:8080/customer/insert', newCustomer).toPromise().then((response: any) => {
       console.log(response);
-      alert('Customer successfully added!');
       resp = {
         status: true
       };
@@ -74,15 +71,13 @@ export class AuthService {
     return resp;
   }
 
-  getCurrentCustomer(): Customer{
+  getCurrentCustomer(): Customer {
     return this.customer;
   }
 
-  async updateCurrentUserDetails(updateUser: any): Promise<any>{
+  async updateCurrentUserDetails(updateUser: any): Promise<any> {
     let resp = {};
     this.httpClient.put('http://localhost:8080/customer/update', updateUser).toPromise().then((response: any) => {
-      console.log(response);
-      alert('Customer successfully update!');
       resp = {
         status: true
       };

@@ -21,7 +21,7 @@ export class PizzaAddComponent implements OnInit {
 
   ngOnInit(): void {
     const params = this.route.snapshot.queryParamMap;
-    if (params.keys.length === 0) {
+    if (params.keys.length > 0) {
       this.pizza.pizzaCost = parseInt(params.get('pizzaCost') ?? '0', 10);
       this.pizza.pizzaDescription = params.get('pizzaDescription') ?? '';
       this.pizza.pizzaType = params.get('pizzaType') ?? '';
@@ -31,6 +31,7 @@ export class PizzaAddComponent implements OnInit {
       this.newPizza = true;
     }
   }
+
 
   async submitPizzaForm(): Promise<void> {
     let resp;

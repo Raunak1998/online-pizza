@@ -1,6 +1,6 @@
 import { Order } from '../order/order';
 
-export interface Customer{
+export interface Customer {
     customerId: number;
     firstName: string;
     lastName: string;

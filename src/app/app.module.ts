@@ -12,7 +12,6 @@ import { NavbarComponent } from './navbar/navbar/navbar.component';
 import { MyProfileComponent } from './customer/my-profile/my-profile.component';
 import { OrderHistoryComponent } from './customer/order-history/order-history.component';
 import { CouponListComponent } from './coupon/coupon-list/coupon-list.component';
-import { ViewOrderComponent } from './order/view-order/view-order.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { AboutUsComponent } from './about-us/about-us/about-us.component';
@@ -36,7 +35,6 @@ import { OrderDetailsComponent } from './order-details/order-details.component';
     MyProfileComponent,
     OrderHistoryComponent,
     CouponListComponent,
-    ViewOrderComponent,
     LoginComponent,
     RegisterComponent,
     AboutUsComponent,

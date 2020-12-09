@@ -3,28 +3,37 @@
   style="
     letter-spacing: 2px;
     font-weight: bolder;
-    font-family:open sans,sans-serif;
+    font-family: open sans, sans-serif;
     background-color: rgb(6, 99, 175);
   "
 >
   <a
     class="navbar-brand"
-    routerLink = '/'
-    style="color: #F2C64D; font-size: 50px; font-weight: 500; margin-bottom: 18px; display: block; font-family: 'Pacifico', cursive;"
+    routerLink="/"
+    style="
+      color: #f2c64d;
+      font-size: 50px;
+      font-weight: 500;
+      margin-bottom: 18px;
+      display: block;
+      font-family: 'Pacifico', cursive;
+    "
   >
     Pizza Turtle's
   </a>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-  >
+  <button class="navbar-toggler" type="button" data-toggle="collapse">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div
     class="collapse navbar-collapse"
-    style="font-size: 20px; font-weight: 500; color: #1A0D01; font-family: 'Montserrat', sans-serif; color: white;"
+    style="
+      font-size: 20px;
+      font-weight: 500;
+      color: #1a0d01;
+      font-family: 'Montserrat', sans-serif;
+      color: white;
+    "
   >
     <ul class="navbar-nav mr-auto">
       <li class="nav-item routerLinkActive=active'">
@@ -42,20 +51,21 @@
         <a class="nav-link" routerLink="/about-us">About Us</a>
       </li>
     </ul>
-    <span class="nav-item dropdown my-2 my-lg-0" *ngIf="getUser() != null">
+    <span
+      class="nav-item dropdown my-2 my-lg-0"
+      *ngIf="getRole() == 'Customer'"
+    >
       <a
         class="nav-link dropdown-toggle"
         href="#"
         id="navbarDropdown"
         role="button"
         data-toggle="dropdown"
-        aria-haspopup="true"
-        aria-expanded="false"
         style="color: white"
       >
         My Profile
       </a>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <div class="dropdown-menu">
         <a class="dropdown-item" routerLink="/my-profile">My Details</a>
         <a class="dropdown-item" routerLink="/order-history">My Orders</a>
         <div class="dropdown-divider"></div>
@@ -66,10 +76,15 @@
       class="nav-link"
       [routerLink]="['/login']"
       style="color: white"
-      *ngIf="getUser() == null"
+      *ngIf="!isLoggedIn()"
       >Login</a
     >
-    <a class="nav-link" style="color: white; cursor: pointer;" *ngIf="getUser() != null" (click)="logout()">
+    <a
+      class="nav-link"
+      style="color: white; cursor: pointer"
+      *ngIf="isLoggedIn()"
+      (click)="logout()"
+    >
       Logout
     </a>
     <a [routerLink]="['/cart']">

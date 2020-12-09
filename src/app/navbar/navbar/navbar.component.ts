@@ -9,17 +9,21 @@ import { SharedService } from 'src/app/shared.service';
 })
 export class NavbarComponent implements OnInit {
 
-  role = '';
-  isLoggedIn = false;
   constructor(private sharedService: SharedService, private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.isLoggedIn = this.authService.isLoggedIn;
-    this.role = this.authService.role;
+  }
+
+  getRole() {
+    return this.authService.role;
+  }
+
+  isLoggedIn() {
+    return this.authService.isLoggedIn;
   }
 
   // tslint:disable-next-line: typedef
-  getUser(){
+  getUser() {
     return this.sharedService.getCurrentCustomer();
   }
 

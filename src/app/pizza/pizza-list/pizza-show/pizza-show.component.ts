@@ -3,6 +3,7 @@ import { EventEmitter } from '@angular/core';
 import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth/auth.service';
 import { Pizza } from '../../pizza';
 
 @Component({
@@ -18,19 +19,27 @@ export class PizzaShowComponent implements OnInit {
   @Output()
   send: any = new EventEmitter();
   constructor(
-    public router: Router
+    public router: Router,
+    private authService: AuthService,
   ) { }
 
   ngOnInit(): void {
   }
 
-  // tslint:disable-next-line: typedef
-  cart(pizza: Pizza){
+  cart(pizza: Pizza) {
     alert('Pizza added to cart!');
     this.send.emit(pizza);
   }
 
   editPizza(): void {
     this.router.navigate(['/pizza-add'], { queryParams: this.pizza });
+  }
+
+  getRole() {
+    return this.authService.role;
+  }
+
+  isLoggedIn() {
+    return this.authService.isLoggedIn;
   }
 }

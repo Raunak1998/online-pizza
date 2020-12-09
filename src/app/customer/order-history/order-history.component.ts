@@ -13,8 +13,10 @@ export class OrderHistoryComponent implements OnInit {
   constructor(private orderService: OrderService) { }
 
   ngOnInit(): void {
-    this.orderArray = this.orderService.getAllOrders();
-    console.log(this.orderArray);
+    this.getOrders();
   }
 
+  async getOrders(): Promise<void> {
+    this.orderArray = await this.orderService.getAllOrders();
+  }
 }

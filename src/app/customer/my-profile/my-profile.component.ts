@@ -14,7 +14,6 @@ export class MyProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.currentUser = this.sharedService.getCurrentCustomer();
-    console.log(this.currentUser);
   }
 
 }

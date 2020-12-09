@@ -1,4 +1,4 @@
-<div style="margin: 5px; box-shadow: 5px 5px 5px grey; padding: 20px;">
+<div style="margin: 5px; box-shadow: 5px 5px 5px grey; padding: 20px">
   <div>
     <img
       class="card-img-top"
@@ -23,9 +23,12 @@
       Coupon Description: {{ coupon.couponDescription }}
     </p>
 
-    <button class="btn btn-outline-primary btn-block" (click)="editCoupon()">
+    <button
+      class="btn btn-outline-primary btn-block"
+      (click)="editCoupon()"
+      *ngIf="getRole() == 'Admin'"
+    >
       Edit Coupon
     </button>
-    
   </div>
 </div>

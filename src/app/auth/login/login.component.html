@@ -1,8 +1,27 @@
-<div class="container col-lg-9 col-md-6 col-sm-3" style="background-color: lightgrey; width: 500px; box-shadow: 5px 5px 5px grey;">
-  <form #loginForm="ngForm" (ngSubmit) = "validate()">
-    <h2>Login Form</h2>
-    <div class="form-group row" style="color: red;text-align: right;">
-      {{error}}
+<div
+  class="container col-lg-9 col-md-6 col-sm-3"
+  style="
+    background-color: lightgrey;
+    width: 500px;
+    box-shadow: 5px 5px 5px grey;
+  "
+>
+  <form #loginForm="ngForm" (ngSubmit)="validate()">
+    <h2
+      class="text-center"
+      style="
+        color: black;
+        font-size: 50px;
+        font-weight: 500;
+        margin-bottom: 18px;
+        display: block;
+        font-family: 'Pacifico', cursive;
+      "
+    >
+      Login Form
+    </h2>
+    <div class="form-group row" style="color: red; text-align: right">
+      {{ error }}
     </div>
     <div class="form-group row">
       <label for="username" class="col-sm-2 col-form-label">Username:</label>
@@ -16,9 +35,10 @@
         />
         <span
           class="text-small text-danger"
-          *ngIf="usernameControl.invalid && usernameControl.touched" >
+          *ngIf="usernameControl.invalid && usernameControl.touched"
+        >
           Username is required
-      </span>
+        </span>
         <br />
       </div>
     </div>
@@ -34,10 +54,11 @@
         />
         <span
           class="text-small text-danger"
-          *ngIf="passwordControl.invalid && passwordControl.touched" >
+          *ngIf="passwordControl.invalid && passwordControl.touched"
+        >
           Password is required
-      </span>
-      <br />
+        </span>
+        <br />
       </div>
     </div>
     <div class="form-group row">
@@ -45,13 +66,18 @@
         type="submit"
         class="btn btn-info"
         [disabled]="loginForm.invalid"
-        style="margin-left: 320px;"
+        style="margin-left: 320px"
       >
         Login
       </button>
     </div>
     <div class="row">
-      <a routerLink = "/register" style="font-weight: bolder;margin-right: 100px; text-align: center; ">Don't have a account!<br> Don't worry click here to register for new account.</a>
+      <a
+        routerLink="/register"
+        style="font-weight: bolder; margin-right: 100px; text-align: center"
+        >Don't have a account!<br />
+        Don't worry click here to register for new account.</a
+      >
     </div>
   </form>
 </div>

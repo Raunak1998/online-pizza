@@ -46,21 +46,32 @@
         font-family: 'Montserrat', sans-serif;
       "
     >
-      {{ pizza.pizzaSize }} 
-      <span style="
-      display: block;
-      font-weight: 700;
-      font-size: 24px;
-      color: #F0542C;
-      font-family: 'Montserrat', sans-serif;">{{ pizza.pizzaCost | currency:'INR'}}</span>
+      {{ pizza.pizzaSize }}
+      <span
+        style="
+          display: block;
+          font-weight: 700;
+          font-size: 24px;
+          color: #f0542c;
+          font-family: 'Montserrat', sans-serif;
+        "
+        >{{ pizza.pizzaCost | currency: "INR" }}</span
+      >
     </div>
     <button
       (click)="cart(pizza)"
       class="btn btn-outline-info btn-block"
-      style="width: 150px; font-weight: bolder;"
+      style="width: 150px; font-weight: bolder"
     >
       Add to Cart
     </button>
-    <button (click)="editPizza()" class="btn btn-outline-danger btn-block" style="width: 150px; font-weight: bolder;">Edit Pizza</button>
+    <button
+      (click)="editPizza()"
+      class="btn btn-outline-danger btn-block"
+      style="width: 150px; font-weight: bolder"
+      *ngIf="getRole() == 'Admin'"
+    >
+      Edit Pizza
+    </button>
   </div>
 </div>

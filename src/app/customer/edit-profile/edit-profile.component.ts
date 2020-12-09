@@ -17,10 +17,8 @@ export class EditProfileComponent implements OnInit {
     this.currentUser = this.sharedService.getCurrentCustomer();
   }
 
-  submitEditForm(): any{
+  submitEditForm(): any {
     this.authService.updateCurrentUserDetails(this.currentUser);
-    console.log('Details Updated');
-    alert('Details Updated Successfully');
     this.router.navigate(['my-profile']);
   }
 }

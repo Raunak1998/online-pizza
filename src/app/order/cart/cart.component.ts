@@ -22,7 +22,7 @@ export class CartComponent implements OnInit {
     private cartService: CartService,
     private couponService: CouponService,
     public authService: AuthService,
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.cartItems = this.cartService.getCartItems();
@@ -36,7 +36,7 @@ export class CartComponent implements OnInit {
   }
 
   // tslint:disable-next-line: typedef
-  continueShopping(){
+  continueShopping() {
     this.router.navigate(['/menu']);
   }
 
@@ -45,17 +45,16 @@ export class CartComponent implements OnInit {
       const discount = 20;
       this.total = this.total - ((discount * this.total) / 100);
       this.couponApplied = true;
-      alert('Applied');
     } else {
       alert('No such coupon');
     }
   }
 
   redirectToLogin(): void {
-    this.router.navigate(['/login'], { queryParams: { redirectToCart: true }});
+    this.router.navigate(['/login'], { queryParams: { redirectToCart: true } });
   }
 
   placeOrder(): void {
-    this.cartService.placeOrder();
+    this.cartService.placeOrder(this.total);
   }
 }

@@ -18,10 +18,8 @@ export class RegisterComponent implements OnInit {
   }
 
   // tslint:disable-next-line: typedef
-   async registerNewUser(){
+  async registerNewUser() {
     const resp = await this.authService.addNewUser(this.newCustomer);
-    console.log(resp);
-    alert('User Successfully Added');
     if (!resp.status) {
       this.error = resp.error;
     }

@@ -1,85 +1,83 @@
 <div class="container md-5">
-    <h2>Update My Details</h2>
-    <form #empForm="ngForm" (ngSubmit) = "submitEditForm()">
-      <div class="form-group row">
-        <label for="fname" class="col-sm-2 col-form-label">First Name:</label>
-        <div class="col-sm-10">
-          <input
-            type="text"
-            [(ngModel)]="currentUser.firstName"
-            name="firstName"
-            required
-          /><br />
-        </div>
+  <h2>Update My Details</h2>
+  <form #empForm="ngForm" (ngSubmit)="submitEditForm()">
+    <div class="form-group row">
+      <label for="fname" class="col-sm-2 col-form-label">First Name:</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          [(ngModel)]="currentUser.firstName"
+          name="firstName"
+          required
+        /><br />
       </div>
-      <div class="form-group row">
-        <label for="lname" class="col-sm-2 col-form-label">Last Name:</label>
-        <div class="col-sm-10">
-          <input
-            type="text"
-            [(ngModel)]="currentUser.lastName"
-            name="lastName"
-            required
-          /><br />
-        </div>
+    </div>
+    <div class="form-group row">
+      <label for="lname" class="col-sm-2 col-form-label">Last Name:</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          [(ngModel)]="currentUser.lastName"
+          name="lastName"
+          required
+        /><br />
       </div>
-      <div class="form-group row">
-        <label for="email" class="col-sm-2 col-form-label">Email:</label>
-        <div class="col-sm-10">
-          <input
-            type="text"
-            [(ngModel)]="currentUser.email"
-            name="email"
-            required
-          /><br />
-        </div>
+    </div>
+    <div class="form-group row">
+      <label for="email" class="col-sm-2 col-form-label">Email:</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          [(ngModel)]="currentUser.email"
+          name="email"
+          required
+        /><br />
       </div>
-      <div class="form-group row">
-        <label for="mobile" class="col-sm-2 col-form-label">Mobile Number:</label>
-        <div class="col-sm-10">
-          <input
-            type="number"
-            [(ngModel)]="currentUser.customerMobile"
-            name="mobile"
-            required
-          /><br />
-        </div>
+    </div>
+    <div class="form-group row">
+      <label for="mobile" class="col-sm-2 col-form-label">Mobile Number:</label>
+      <div class="col-sm-10">
+        <input
+          type="number"
+          [(ngModel)]="currentUser.customerMobile"
+          name="mobile"
+          required
+        /><br />
       </div>
-      <div class="form-group row">
-        <label for="address" class="col-sm-2 col-form-label">Address:</label>
-        <div class="col-sm-10">
-          <textarea
-                [(ngModel)]="currentUser.address"
-                name="address">
-          </textarea>
-          <br />
-        </div>
+    </div>
+    <div class="form-group row">
+      <label for="address" class="col-sm-2 col-form-label">Address:</label>
+      <div class="col-sm-10">
+        <textarea [(ngModel)]="currentUser.address" name="address"> </textarea>
+        <br />
       </div>
-      <div class="form-group row">
-        <label for="username" class="col-sm-2 col-form-label">Username:</label>
-        <div class="col-sm-10">
-          <input
-            type="text"
-            [(ngModel)]="currentUser.userName"
-            name="username"
-            required
-          /><br />
-        </div>
+    </div>
+    <div class="form-group row">
+      <label for="username" class="col-sm-2 col-form-label">Username:</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          [(ngModel)]="currentUser.userName"
+          name="username"
+          required
+        /><br />
       </div>
-      <div class="form-group row">
-        <label for="password" class="col-sm-2 col-form-label">New Password:</label>
-        <div class="col-sm-10">
-          <input
-            type="password"
-            [(ngModel)]="currentUser.password"
-            name="password"
-            required
-          /><br />
-        </div>
+    </div>
+    <div class="form-group row">
+      <label for="password" class="col-sm-2 col-form-label"
+        >New Password:</label
+      >
+      <div class="col-sm-10">
+        <input
+          type="password"
+          [(ngModel)]="currentUser.password"
+          name="password"
+          required
+        /><br />
       </div>
-      <div class="form-group row">
-        <input type="submit" class="btn btn-info" value="Update Details">
-      </div>
-    </form>
-  </div>
-  
+    </div>
+    <div class="form-group row">
+      <input type="submit" class="btn btn-info" value="Update Details" />
+    </div>
+  </form>
+</div>

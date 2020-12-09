@@ -9,10 +9,10 @@ export class SharedService {
   currentCustomer: any = null;
   constructor() { }
 
-  setCurrentCustomer(customer: Customer): void{
+  setCurrentCustomer(customer: Customer): void {
     this.currentCustomer = customer;
   }
-  getCurrentCustomer(): Customer{
+  getCurrentCustomer(): Customer {
     return this.currentCustomer;
   }
 }

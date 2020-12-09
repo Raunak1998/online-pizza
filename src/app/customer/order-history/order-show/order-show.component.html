@@ -1,30 +1,26 @@
-<div style="margin: 5px">
-    <div>
-      <img
-        class="card-img-top"
-        src="https://www.flaticon.com/svg/static/icons/svg/3500/3500833.svg"
-        alt="Card image"
-      />
-    </div>
-    <div class="card-body">
-      <h3 class="card-title" style="text-align: center">
-        {{ order.orderId }}
-      </h3>
-      <p
-        class="card-text"
-        style="font-size: small; text-align: center; font-weight: bold"
-      >
-        Order Date: {{ order.orderDate }}
-      </p>
-      <p
-        class="card-text"
-        style="font-size: small; text-align: center; font-weight: bold"
-      >
-        Total Cost: {{ order.totalCost }}
-      </p>
-      <div class="d-flex justify-content-between">
-        <button class="btn btn-primary">See Details</button>
-      </div>
-    </div>
+<div style="margin: 5px; box-shadow: 5px 5px 5px grey; padding: 20px">
+  <div>
+    <img
+      class="card-img-top"
+      src="https://www.flaticon.com/svg/static/icons/svg/3500/3500833.svg"
+      alt="Card image"
+    />
   </div>
-  
+  <div class="card-body">
+    <h3 class="card-title" style="text-align: center">
+      {{ order.orderId }}
+    </h3>
+    <p
+      class="card-text"
+      style="font-size: small; text-align: center; font-weight: bold"
+    >
+      Order Date: {{ order.orderDate }}
+    </p>
+    <p
+      class="card-text"
+      style="font-size: small; text-align: center; font-weight: bold"
+    >
+      Total Cost: {{ order.totalCost }}
+    </p>
+  </div>
+</div>

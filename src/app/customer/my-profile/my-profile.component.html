@@ -1,15 +1,37 @@
-<div class="container col-lg-9 col-md-6 col-sm-3" style="margin: 5px; box-shadow: 5px 5px 5px grey; padding: 20px; background-color: lightgrey;margin-left: 350px;">
-  <h2>My Details</h2>
+<div
+  class="container col-lg-9 col-md-6 col-sm-3"
+  style="
+    margin: 5px;
+    box-shadow: 5px 5px 5px grey;
+    padding: 20px;
+    background-color: lightgrey;
+    margin-left: 350px;
+  "
+>
+  <h2
+    style="
+      color: black;
+      font-size: 50px;
+      font-weight: 500;
+      margin-bottom: 18px;
+      display: block;
+      font-family: 'Pacifico', cursive;
+    "
+  >
+    My Details
+  </h2>
   <form>
     <div class="form-group row">
-        <label for="cid" class="col-sm-2 md-2 lg-2 col-form-label">Customer ID:</label>
-        <div class="col-sm-10">
-          <label for="cid" class="col-sm-2 col-form-label">{{
-            currentUser.customerId
-          }}</label>
-          <br />
-        </div>
+      <label for="cid" class="col-sm-2 md-2 lg-2 col-form-label"
+        >Customer ID:</label
+      >
+      <div class="col-sm-10">
+        <label for="cid" class="col-sm-2 col-form-label">{{
+          currentUser.customerId
+        }}</label>
+        <br />
       </div>
+    </div>
     <div class="form-group row">
       <label for="fname" class="col-sm-2 col-form-label">First Name:</label>
       <div class="col-sm-10">
@@ -29,43 +51,43 @@
       </div>
     </div>
     <div class="form-group row">
-        <label for="mobile" class="col-sm-2 col-form-label">Mobile Number:</label>
-        <div class="col-sm-10">
-          <label for="mobile" class="col-sm-2 col-form-label">{{
-            currentUser.customerMobile
-          }}</label>
-          <br />
-        </div>
+      <label for="mobile" class="col-sm-2 col-form-label">Mobile Number:</label>
+      <div class="col-sm-10">
+        <label for="mobile" class="col-sm-2 col-form-label">{{
+          currentUser.customerMobile
+        }}</label>
+        <br />
       </div>
-      <div class="form-group row">
-        <label for="email" class="col-sm-2 col-form-label">Email:</label>
-        <div class="col-sm-10">
-          <label for="email" class="col-sm-2 col-form-label">{{
-            currentUser.customerEmail
-          }}</label>
-          <br />
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="address" class="col-sm-2 col-form-label">Address:</label>
-        <div class="col-sm-10">
-          <label for="address" class="col-sm-2 col-form-label">{{
-            currentUser.customerAddress
-          }}</label>
-          <br />
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="username" class="col-sm-2 col-form-label">Username:</label>
-        <div class="col-sm-10">
-          <label for="lname" class="col-sm-2 col-form-label">{{
-            currentUser.userName
-          }}</label>
-          <br />
-        </div>
-      </div>
+    </div>
     <div class="form-group row">
-      <button class="btn btn-info" routerLink = '/edit-profile'>
+      <label for="email" class="col-sm-2 col-form-label">Email:</label>
+      <div class="col-sm-10">
+        <label for="email" class="col-sm-2 col-form-label">{{
+          currentUser.customerEmail
+        }}</label>
+        <br />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="address" class="col-sm-2 col-form-label">Address:</label>
+      <div class="col-sm-10">
+        <label for="address" class="col-sm-2 col-form-label">{{
+          currentUser.customerAddress
+        }}</label>
+        <br />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="username" class="col-sm-2 col-form-label">Username:</label>
+      <div class="col-sm-10">
+        <label for="lname" class="col-sm-2 col-form-label">{{
+          currentUser.userName
+        }}</label>
+        <br />
+      </div>
+    </div>
+    <div class="form-group row">
+      <button class="btn btn-info" routerLink="/edit-profile">
         Update Details
       </button>
     </div>

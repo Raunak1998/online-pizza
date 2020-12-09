@@ -1,43 +1,69 @@
-<div class="card" *ngIf="cartItems.length===0">
-    Cart is Empty! Please add products to your cart !
-</div>  
-<div class="row" *ngIf="cartItems.length>0">
-    <div class="col-4"></div>
-    <div class="col-4">
-        <ul class="list-group">
-            <li class="list-group-item list-group-item-warning">
-                <strong>CART</strong>
-            </li>
-            <li *ngFor="let cartItem of cartItems; let i = index" class="list-group-item">
-                <app-cart-item
-                    [cartItem]='cartItem'
-                    [index]='i'
-                    (recalculate)="calculateTotal()">
-                </app-cart-item>
-            </li>
-            <li  class="list-group-item list-group-item-success">
-                <strong>Total:</strong>{{ total | currency:'INR'}}
-            </li>
-            <li class="list-group-item">
-                <div *ngIf="!couponApplied">
-                    <input type="text" [(ngModel)]="couponCode" />
-                    <button type="btn btn-primary" (click)="applyCoupon()">Apply</button>
-                </div>
-                <div *ngIf="couponApplied">
-                    Coupon already applied!
-                </div>
-            </li>
-            <li class="list-group-item list-group-item-warning">
-                <button type="button" class="btn btn-outline-info btn-block" *ngIf="this.authService.isLoggedIn" (click)="placeOrder()"><strong>Place Order</strong></button>
-                <button type="button" class="btn btn-outline-info btn-block" *ngIf="!this.authService.isLoggedIn" (click)="redirectToLogin()"><strong>Login to place order</strong></button>
-                <button type="button" class="btn btn-primary btn-block" (click)='continueShopping()'><strong>Still Hungry? Click here to Order more.</strong></button>
-            </li>
-        </ul>
-
-    </div>
-    <div class="col-4"></div>
+<div class="card" *ngIf="cartItems.length === 0">
+  Cart is Empty! Please add products to your cart !
 </div>
-  
-
-
-
+<div class="row" *ngIf="cartItems.length > 0">
+  <div class="col-4"></div>
+  <div class="col-4">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-warning">
+        <strong>CART</strong>
+      </li>
+      <li
+        *ngFor="let cartItem of cartItems; let i = index"
+        class="list-group-item"
+      >
+        <app-cart-item
+          [cartItem]="cartItem"
+          [index]="i"
+          (recalculate)="calculateTotal()"
+        >
+        </app-cart-item>
+      </li>
+      <li class="list-group-item list-group-item-success">
+        <strong>Total:</strong>{{ total | currency: "INR" }}
+      </li>
+      <li class="list-group-item">
+        <div *ngIf="!couponApplied">
+          <input
+            type="text"
+            [(ngModel)]="couponCode"
+            style="border-radius: 15px"
+          />
+          <button
+            type="btn btn-outline-danger btn-block"
+            (click)="applyCoupon()"
+          >
+            Apply
+          </button>
+        </div>
+        <div *ngIf="couponApplied">Coupon applied!</div>
+      </li>
+      <li class="list-group-item list-group-item-warning">
+        <button
+          type="button"
+          class="btn btn-outline-info btn-block"
+          *ngIf="this.authService.isLoggedIn"
+          (click)="placeOrder()"
+        >
+          <strong>Place Order</strong>
+        </button>
+        <button
+          type="button"
+          class="btn btn-outline-info btn-block"
+          *ngIf="!this.authService.isLoggedIn"
+          (click)="redirectToLogin()"
+        >
+          <strong>Login to place order</strong>
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary btn-block"
+          (click)="continueShopping()"
+        >
+          <strong>Still Hungry? Click here to Order more.</strong>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="col-4"></div>
+</div>

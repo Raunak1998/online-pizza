@@ -25,14 +25,12 @@ export class CartService {
     private router: Router,
   ) { }
 
-  // tslint:disable-next-line: typedef
-  addItem(cartItem: Pizza){
+  addItem(cartItem: Pizza) {
     const found = this.cartItems.find((item) => item.pizzaId === cartItem.pizzaId);
     if (!found) { this.cartItems.push(cartItem); }
   }
 
-  // tslint:disable-next-line: typedef
-  getCartItems(){
+  getCartItems() {
     return this.cartItems;
   }
 
@@ -40,24 +38,22 @@ export class CartService {
     await this.cartItems.splice(index, 1);
   }
 
-  // tslint:disable-next-line: typedef
-  getTotal(){
+  getTotal() {
     this.total = 0;
     this.cartItems.forEach((item: any) => {
-      // tslint:disable-next-line: radix
       this.total += item.pizzaCost;
-   });
+    });
     console.log(this.total);
     return this.total;
   }
 
-  async placeOrder(): Promise<void> {
+  async placeOrder(total: number): Promise<void> {
     const customer = this.auth.getCurrentCustomer();
     const date1 = new Date();
     const date = date1.toISOString();
     const order: Order = {
       orderDate: date,
-      totalCost: this.total,
+      totalCost: total,
       pizzas: this.cartItems,
       customer,
       coupon: this.coupon

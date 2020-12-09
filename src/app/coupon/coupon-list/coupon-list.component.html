@@ -1,7 +1,23 @@
 <div class="container mt-5">
   <div>
-    <h3 style="color: #F2C64D; font-size: 50px; font-weight: 500; margin-bottom: 18px; display: block; font-family: 'Pacifico', cursive;">Coupon Details</h3>
-    <button class="btn btn-outline-primary btn-block" style="width: 150px; font-weight: bolder;" routerLink="/coupon-add" >
+    <h3
+      style="
+        color: #f2c64d;
+        font-size: 50px;
+        font-weight: 500;
+        margin-bottom: 18px;
+        display: block;
+        font-family: 'Pacifico', cursive;
+      "
+    >
+      Coupon Details
+    </h3>
+    <button
+      class="btn btn-outline-primary btn-block"
+      style="width: 150px; font-weight: bolder"
+      routerLink="/coupon-add"
+      *ngIf="getRole() == 'Admin'"
+    >
       Add Coupon
     </button>
   </div>
