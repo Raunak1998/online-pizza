@@ -19,6 +19,13 @@
     <p
       class="card-text"
       style="font-size: small; text-align: center; font-weight: bold"
+      *ngFor = "let i of order.pizzas"
+    >
+      Pizza Ordered: {{ i.pizzaName }}
+    </p>
+    <p
+      class="card-text"
+      style="font-size: small; text-align: center; font-weight: bold"
     >
       Total Cost: {{ order.totalCost }}
     </p>
