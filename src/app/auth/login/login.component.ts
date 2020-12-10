@@ -25,8 +25,7 @@ export class LoginComponent implements OnInit {
       }
     }
   }
-
-  // tslint:disable-next-line: typedef
+  
   async validate() {
     const resp: any = await this.authService.validateUser(this.user);
     if (!resp.status) {

@@ -1,5 +1,12 @@
 <div class="card" *ngIf="cartItems.length === 0">
   Cart is Empty! Please add products to your cart !
+  <button
+          type="button"
+          class="btn btn-danger btn-block col-lg-2 col-md-1 col-sm-1"
+          (click)="continueShopping()"
+        >
+          <strong>Still Hungry? Click here to Order more.</strong>
+        </button>
 </div>
 <div class="row" *ngIf="cartItems.length > 0">
   <div class="col-4"></div>
